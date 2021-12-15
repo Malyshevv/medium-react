@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import useFetch from 'hooks/useFetch'
+import useFetch from '../hooks/useFetch'
 
-import Loading from 'components/loading'
-import ErrorMessage from 'components/errorMessage'
+import Loading from '../components/loading'
+import ErrorMessage from '../components/errorMessage'
 
 
 const PopularTags = () => {

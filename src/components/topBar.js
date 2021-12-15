@@ -1,7 +1,7 @@
 import React, { useContext, Fragment } from 'react'
 import {Link,NavLink} from 'react-router-dom'
 
-import {CurrentUserContext} from 'context/curentUser'
+import {CurrentUserContext} from '../context/curentUser'
 
 const TopBar = () => {
     const [curentUserState] = useContext(CurrentUserContext)
@@ -46,12 +46,12 @@ const TopBar = () => {
                                 </NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink 
-                                    to ={`/profiles/${curentUserState.currentUser.username}`} 
+                                <NavLink
+                                    to ={`/profiles/${curentUserState.currentUser.username}`}
                                     className="nav-link">
-                                    <img 
-                                        className="user-pic" 
-                                        src={curentUserState.currentUser.image || "https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png"} 
+                                    <img
+                                        className="user-pic"
+                                        src={curentUserState.currentUser.image || "https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png"}
                                         alt=""/>
                                          &nbsp; {curentUserState.currentUser.username}
                                 </NavLink>

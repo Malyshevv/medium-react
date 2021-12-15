@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext} from 'react'
 import { Redirect } from 'react-router-dom';
 
-import ArticleForm from "components/articleForm";
-import useFetch from "hooks/useFetch";
-import {CurrentUserContext} from "context/curentUser";
+import ArticleForm from "../../components/articleForm";
+import useFetch from "../../hooks/useFetch";
+import {CurrentUserContext} from "../../context/curentUser";
 
 
 const EditArticle = props => {
@@ -51,14 +51,14 @@ const EditArticle = props => {
     if(currentUserState.isLoggedIn === false) {
         return <Redirect to="/"/>
     }
-    
+
     if(isSuccessfulSubmit) {
         return <Redirect to={`/articles/${slug}`}/>
     }
 
     return (
         <div>
-            <ArticleForm  
+            <ArticleForm
                 errors={(updateArticleError && updateArticleError.errors) || {}}
                 initialValues={initialValues}
                 onSubmit={handleSubmit}

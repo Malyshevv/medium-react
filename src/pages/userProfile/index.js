@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
 import {NavLink} from 'react-router-dom'
 
-import useFetch from 'hooks/useFetch'
-import UserArticles from 'pages/userProfile/components/UserArticles'
+import useFetch from '../../hooks/useFetch'
+import UserArticles from '../../pages/userProfile/components/UserArticles'
 
 const UserProfile = ({location, match}) => {
   const slug = match.params.slug

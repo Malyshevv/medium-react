@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext} from 'react'
 import { Redirect } from 'react-router-dom';
 
-import ArticleForm from "components/articleForm";
-import useFetch from "hooks/useFetch";
-import {CurrentUserContext} from "context/curentUser";
+import ArticleForm from "../../components/articleForm";
+import useFetch from "../../hooks/useFetch";
+import {CurrentUserContext} from "../../context/curentUser";
 
 
 const CreateArticle = () => {
@@ -45,7 +45,7 @@ const CreateArticle = () => {
 
     return (
         <div>
-            <ArticleForm  
+            <ArticleForm
                 errors={(error && error.errors) || {}}
                 initialValues={initialValues}
                 onSubmit={handleSubmit}

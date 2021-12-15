@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import {NavLink} from 'react-router-dom'
 
-import {CurrentUserContext} from 'context/curentUser'
+import {CurrentUserContext} from '../context/curentUser'
 
 const FeedToogler = ({tagName}) => {
     const [currentUserState] = useContext(CurrentUserContext)

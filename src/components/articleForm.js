@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react'
-import BackendErrorMessage from "components/backendErrorMessages";
+import BackendErrorMessage from "../components/backendErrorMessages";
 
 const ArticleForm = ({onSubmit, errors, initialValues}) => {
     const [title, setTitile] = useState('')
@@ -9,7 +9,7 @@ const ArticleForm = ({onSubmit, errors, initialValues}) => {
 
     useEffect(() => {
         if(!initialValues) {
-            return 
+            return
         }
         setTitile(initialValues.title)
         setBody(initialValues.body)
@@ -38,27 +38,27 @@ const ArticleForm = ({onSubmit, errors, initialValues}) => {
                         <form onSubmit={handleSubmit}>
                             <fieldset>
                                 <fieldset className="form-group">
-                                    <input 
-                                        type="text" 
-                                        className="form-control form-control-lg" 
+                                    <input
+                                        type="text"
+                                        className="form-control form-control-lg"
                                         placeholder="Article title"
                                         value={title}
                                         onChange={e => setTitile(e.target.value)}
                                     />
                                 </fieldset>
                                 <fieldset className="form-group">
-                                    <input 
-                                        type="text" 
-                                        className="form-control form-control-lg" 
+                                    <input
+                                        type="text"
+                                        className="form-control form-control-lg"
                                         placeholder="What is this article about?"
                                         value={description}
                                         onChange={e => setDescription(e.target.value)}
                                     />
                                 </fieldset>
                                 <fieldset className="form-group">
-                                    <textarea 
+                                    <textarea
                                         rows="8"
-                                        className="form-control form-control-lg" 
+                                        className="form-control form-control-lg"
                                         placeholder="Write your article (in markdown)"
                                         value={body}
                                         onChange={e => setBody(e.target.value)}
@@ -66,9 +66,9 @@ const ArticleForm = ({onSubmit, errors, initialValues}) => {
                                     </textarea>
                                 </fieldset>
                                 <fieldset className="form-group">
-                                    <input 
-                                        type="text" 
-                                        className="form-control form-control-lg" 
+                                    <input
+                                        type="text"
+                                        className="form-control form-control-lg"
                                         placeholder="Enter tags"
                                         value={tagList}
                                         onChange={e => setTagList([e.target.value]) }
@@ -76,8 +76,8 @@ const ArticleForm = ({onSubmit, errors, initialValues}) => {
                                     />
                                 </fieldset>
                                 <fieldset className="form-group">
-                                    <button 
-                                        type="submit" 
+                                    <button
+                                        type="submit"
                                         className="btn btn-lg pull-xs-right btn-primary">
                                             Publish Article
                                     </button>

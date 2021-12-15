@@ -1,10 +1,10 @@
 import React,{useState,useEffect,useContext} from 'react'
 import {Link, Redirect} from 'react-router-dom'
 
-import useFetch from 'hooks/useFetch'
-import useLocalStorage from 'hooks/useLocalStorage'
-import {CurrentUserContext} from 'context/curentUser'
-import BackendErrorMessages from 'components/backendErrorMessages'
+import useFetch from '../../hooks/useFetch'
+import useLocalStorage from '../../hooks/useLocalStorage'
+import {CurrentUserContext} from '../../context/curentUser'
+import BackendErrorMessages from '../../components/backendErrorMessages'
 
 const Authentication = props => {
 
@@ -21,7 +21,7 @@ const Authentication = props => {
     const [isSuccessfulSubmit, setIsSuccessfullSubmit] = useState(false)
     const [, setToken] = useLocalStorage('token')
     const [, dispatch] = useContext(CurrentUserContext)
-  
+
     const handleSubmit = event => {
         event.preventDefault()
         const user = isLogin ? {email, password} : {email,password,username}
@@ -40,9 +40,9 @@ const Authentication = props => {
         setToken(response.user.token)
         setIsSuccessfullSubmit(true)
         dispatch({type: 'SET_AUTHORIZED', payload: response.user})
-   
+
     },[response, setToken, dispatch])
-  
+
     if(isSuccessfulSubmit) {
         return <Redirect to="/" />
     }
@@ -61,9 +61,9 @@ const Authentication = props => {
                             <fieldset>
                                 {!isLogin && (
                                     <fieldset className="form-group">
-                                        <input 
-                                            type="text" 
-                                            className="form-control form-control-lg" 
+                                        <input
+                                            type="text"
+                                            className="form-control form-control-lg"
                                             placeholder="Username"
                                             value={username}
                                             onChange={e => setUsername(e.target.value)}
@@ -71,25 +71,25 @@ const Authentication = props => {
                                     </fieldset>
                                 )}
                                 <fieldset className="form-group">
-                                    <input 
-                                        type="email" 
-                                        className="form-control form-control-lg" 
+                                    <input
+                                        type="email"
+                                        className="form-control form-control-lg"
                                         placeholder="Email"
                                         value={email}
                                         onChange={e => setEmail(e.target.value)}
                                     />
                                 </fieldset>
                                 <fieldset className="form-group">
-                                    <input 
-                                        type="password" 
-                                        className="form-control form-control-lg" 
+                                    <input
+                                        type="password"
+                                        className="form-control form-control-lg"
                                         placeholder="Password"
                                         value={password}
                                         onChange={e => setPassword(e.target.value)}
                                     />
                                 </fieldset>
-                                <button 
-                                    className="btn btn-lg btn-primary pull-xs-right" 
+                                <button
+                                    className="btn btn-lg btn-primary pull-xs-right"
                                     type="submit"
                                     disabled={isLoading}>
                                     {pageTitle}

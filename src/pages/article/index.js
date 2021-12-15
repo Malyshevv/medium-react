@@ -1,19 +1,18 @@
 import React,{useEffect, useContext, useState} from 'react'
 import {Link,Redirect} from 'react-router-dom'
 
+import useFetch from '../../hooks/useFetch'
 
-import useFetch from 'hooks/useFetch'
-
-import Loading from 'components/loading'
-import ErrorMessage from 'components/errorMessage'
-import TagList from 'components/tagList'
-import {CurrentUserContext} from "context/curentUser";
+import Loading from '../../components/loading'
+import ErrorMessage from '../../components/errorMessage'
+import TagList from '../../components/tagList'
+import {CurrentUserContext} from "../../context/curentUser";
 
 const Article = props => {
     const slug = props.match.params.slug
     const apiUrl = `/articles/${slug}`
-    const [{response: fetchArticleResponse, 
-            error: fetchArticleError, 
+    const [{response: fetchArticleResponse,
+            error: fetchArticleError,
             isLoading: fetchArticleIsLoading}, doFetch] = useFetch(apiUrl)
     const [{response: deleteArticleResponse}, doDeletArticle] = useFetch(apiUrl)
     const [currentUserState] = useContext(CurrentUserContext)
@@ -27,7 +26,7 @@ const Article = props => {
             fetchArticleResponse.article.author.username === currentUserState.currentUser.username
         )
     }
-    
+
     const deleteArticle = () => {
         doDeletArticle({
             method: 'delete'
@@ -69,13 +68,13 @@ const Article = props => {
                             </div>
                             {isAuthor() && (
                                 <span>
-                                    <Link 
+                                    <Link
                                     className="btn btn-outline-secondary btn-sm"
                                     to={`/article/${fetchArticleResponse.article.slug}/edit`}>
                                         <i className="ion-edit"></i>
                                         Edit article
                                     </Link>
-                                    <button 
+                                    <button
                                         className="btn btn-outline-danger btn-sm"
                                         onClick={deleteArticle}>
                                         <i className="ion-trash-a"></i>

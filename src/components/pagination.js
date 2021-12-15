@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
-import {range} from 'utils'
+import {range} from '../utils'
 
 const PaginationItem = ({page,currentPage,url}) => {
     const liClasses = classNames({

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import TagList from 'components/tagList'
-import AddToFavorites from 'components/addToFavorites'
+import TagList from '../components/tagList'
+import AddToFavorites from '../components/addToFavorites'
 
 const Feed = ({articles}) => {
     return (

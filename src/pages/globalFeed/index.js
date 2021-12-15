@@ -1,15 +1,15 @@
 import React, { Fragment, useEffect } from 'react'
 import {stringify} from 'query-string'
 
-import useFetch from 'hooks/useFetch'
-import Feed from 'components/feed'
-import PopularTags from 'components/popularTags'
-import FeedToogler from 'components/feedToggler'
-import Pagination from 'components/pagination'
-import {getPaginator, limit} from 'utils'
+import useFetch from '../../hooks/useFetch'
+import Feed from '../../components/feed'
+import PopularTags from '../../components/popularTags'
+import FeedToogler from '../../components/feedToggler'
+import Pagination from '../../components/pagination'
+import {getPaginator, limit} from '../../utils'
 
-import Loading from 'components/loading'
-import ErrorMessage from 'components/errorMessage'
+import Loading from '../../components/loading'
+import ErrorMessage from '../../components/errorMessage'
 
 const GlobalFeed = ({location,match}) => {
     const {offset,currentPage} = getPaginator(location.search)
@@ -44,7 +44,7 @@ const GlobalFeed = ({location,match}) => {
                                 <Feed articles={response.articles}/>
                                 <Pagination total={response.articlesCount} limit={limit} url={url} currentPage={currentPage}/>
                             </Fragment>
-                            
+
                         )}
                     </div>
                     <div className="col-md-3">

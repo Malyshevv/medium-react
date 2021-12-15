@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import useFetch from 'hooks/useFetch'
+import useFetch from '../hooks/useFetch'
 
 const AddToFavorites = ({isFavorited, favoritesCount, articleSlug}) => {
 

@@ -1,15 +1,15 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 
-import GlobalFeed from 'pages/globalFeed'
-import YourFeed from 'pages/yourFeed'
-import TagFeed from 'pages/tagFeed'
-import Article from 'pages/article'
-import CreateArticle from 'pages/article/createArticle'
-import EditArticle from 'pages/article/editArticle'
-import Authentication from 'pages/authentication'
-import Settings from 'pages/settings'
-import UserProfile from 'pages/userProfile'
+import GlobalFeed from './pages/globalFeed'
+import YourFeed from './pages/yourFeed'
+import TagFeed from './pages/tagFeed'
+import Article from './pages/article'
+import CreateArticle from './pages/article/createArticle'
+import EditArticle from './pages/article/editArticle'
+import Authentication from './pages/authentication'
+import Settings from './pages/settings'
+import UserProfile from './pages/userProfile'
 
 export default () => {
     return (

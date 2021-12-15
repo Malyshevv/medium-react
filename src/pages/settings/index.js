@@ -1,10 +1,10 @@
 import React,{useState,useContext,useEffect} from 'react'
 import { Redirect } from 'react-router-dom';
 
-import useFetch from "hooks/useFetch"
-import useLocalStorage from 'hooks/useLocalStorage'
-import {CurrentUserContext} from "context/curentUser"
-import BackendErrorMessages from "components/backendErrorMessages"
+import useFetch from "../../hooks/useFetch"
+import useLocalStorage from '../../hooks/useLocalStorage'
+import {CurrentUserContext} from "../../context/curentUser"
+import BackendErrorMessages from "../../components/backendErrorMessages"
 
 const Settings = () => {
 
